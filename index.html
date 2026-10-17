@@ -60,6 +60,12 @@
     .logo img { height: 36px; width: auto; margin-left: -4px; }
     .hero { padding-top: 48px; padding-bottom: 56px; }
     .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; }
+    .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .typed { display: block; min-height: 2.3em; }
+    @media (min-width: 640px) { .typed { min-height: 1.15em; } }
+    .typed .word { color: var(--brand); }
+    .typed .cursor { display: inline-block; width: 0.08em; height: 1em; margin-left: 0.06em; background: var(--brand); vertical-align: -0.12em; animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
     .hero p { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin: 0 0 28px; }
     .btn {
       display: inline-block; background: var(--brand); color: #fff; text-decoration: none;
@@ -131,7 +137,10 @@
 
   <main>
     <div class="wrap hero">
-      <h1>Software, siti web e soluzioni digitali per le attività locali</h1>
+      <h1>
+        <span class="sr-only">Software, siti web e soluzioni digitali per le attività locali</span>
+        <span class="typed" aria-hidden="true"><span class="word">Software, siti web e soluzioni digitali per le attività locali</span><span class="cursor"></span></span>
+      </h1>
       <p>Progettiamo e sviluppiamo strumenti digitali semplici da usare, con un'attenzione particolare alla ristorazione. Dall'idea al lancio, con assistenza diretta a Palermo.</p>
       <a class="btn" href="#contatti">Richiedi informazioni</a>
     </div>
@@ -263,6 +272,31 @@
       GO!Food Italia di Giorgio Di Martino · P.IVA 06955440828 · Via Mariano Stabile 160, 90139 Palermo
     </div>
   </footer>
+  <script>
+    (function () {
+      // Titolo "macchina da scrivere": ogni frase viene scritta, resta un attimo e viene cancellata, in loop
+      var el = document.querySelector('.typed .word');
+      if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var phrases = ['Software', 'Siti web', 'Soluzioni digitali', 'per le attività locali'];
+      var TYPE = 85, ERASE = 40, HOLD = 1400, GAP = 350;
+      var i = 0, n = 0, erasing = false;
+      el.textContent = '';
+      function tick() {
+        var text = phrases[i];
+        if (!erasing) {
+          n++;
+          el.textContent = text.slice(0, n);
+          if (n === text.length) { erasing = true; return setTimeout(tick, HOLD); }
+          return setTimeout(tick, TYPE);
+        }
+        n--;
+        el.textContent = text.slice(0, n);
+        if (n === 0) { erasing = false; i = (i + 1) % phrases.length; return setTimeout(tick, GAP); }
+        setTimeout(tick, ERASE);
+      }
+      setTimeout(tick, 400);
+    })();
+  </script>
   <script>
     (function () {
       var form = document.getElementById('contact-form');
