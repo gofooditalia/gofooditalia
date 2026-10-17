@@ -13,3 +13,4 @@ pubblicato su Vercel (progetto `gofooditalia`) con il dominio gofood.it. Rispond
 ## Dati aziendali
 GO!Food Italia di Giorgio Di Martino · P.IVA 06955440828 · Via Mariano Stabile 160, 90139 Palermo
 · tel. 338 377 9151 · info@gofood.it
+- Email pubblica: **info@gofood.it**. Sui siti (nostri e dei clienti) sostituire ovunque possibile italiagofood@gmail.com.
