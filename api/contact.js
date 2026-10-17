@@ -1,7 +1,7 @@
 // Modulo "Richiedi informazioni" di gofood.it: invia la richiesta a info@gofood.it tramite Resend.
 // Variabili su Vercel: RESEND_API_KEY (obbligatoria), CONTACT_FROM e CONTACT_TO (facoltative).
 
-const FROM = process.env.CONTACT_FROM || 'GO! Food Italia <noreply@gofood.it>';
+const FROM = process.env.CONTACT_FROM || 'Go!Food Italia <noreply@gofood.it>';
 const TO = process.env.CONTACT_TO || 'info@gofood.it';
 
 function clean(value, max) {
