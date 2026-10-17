@@ -7,7 +7,7 @@ pubblicato su Vercel (progetto `gofooditalia`) con il dominio gofood.it. Rispond
 - **bemyrider** si scrive SEMPRE tutto minuscolo (mai "BeMyRider", "Bemyrider" o simili).
 - Go!Food Menù è il menu digitale (gofoodmenu.it); GO!Food Italia è la ditta.
 - La ditta si scrive **GO!Food Italia**: "GO" maiuscolo, nessuno spazio tra "!" e "Food" (mai "GO! Food" o "Go!Food Italia").
-- Il logotipo GO!Food usa il font **Alegreya** (Google Fonts, peso 800).
+- Il logotipo GO!Food usa il font **Alegreya** (Google Fonts, peso 800): immagini `logotipo.png` (trasparente, intestazione del sito) e `firma/logotipo.png` (fondo bianco, firma email).
 
 ## Dati aziendali
 GO!Food Italia di Giorgio Di Martino · P.IVA 06955440828 · Via Mariano Stabile 160, 90139 Palermo

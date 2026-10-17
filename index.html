@@ -6,9 +6,6 @@
   <title>GO!Food Italia – Software, siti web e soluzioni digitali a Palermo</title>
   <meta name="description" content="GO!Food Italia di Giorgio Di Martino sviluppa software, siti web e soluzioni digitali per attività locali a Palermo. Tra i progetti: Go!Food Menù e bemyrider.">
   <link rel="canonical" href="https://gofood.it/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@800&display=swap" rel="stylesheet">
   <meta property="og:title" content="GO!Food Italia">
   <meta property="og:description" content="Software, siti web e soluzioni digitali per attività locali, con un'attenzione particolare alla ristorazione.">
   <meta property="og:url" content="https://gofood.it/">
@@ -54,8 +51,8 @@
     }
     .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
     header { padding: 28px 0; }
-    .logo { font-family: "Alegreya", Georgia, serif; font-size: 1.75rem; font-weight: 800; }
-    .logo span { color: var(--brand); }
+    .logo { display: inline-block; line-height: 0; }
+    .logo img { height: 36px; width: auto; margin-left: -4px; }
     .hero { padding-top: 48px; padding-bottom: 56px; }
     .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; }
     .hero p { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin: 0 0 28px; }
@@ -123,7 +120,7 @@
 <body>
   <header>
     <div class="wrap">
-      <div class="logo">GO!<span>Food</span> Italia</div>
+      <a class="logo" href="/"><img src="logotipo.png" alt="GO!Food Italia" width="195" height="36"></a>
     </div>
   </header>
 
