@@ -71,6 +71,14 @@
     .card a { color: var(--brand-dark); font-weight: 600; text-decoration: none; }
     .card a:hover { text-decoration: underline; }
     section { padding: 40px 0; }
+    .work { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; text-decoration: none; color: var(--text); transition: transform .15s, box-shadow .15s; }
+    .work:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(31,26,23,.08); }
+    .work img { display: block; width: 100%; height: auto; aspect-ratio: 40 / 21; object-fit: cover; background: var(--border); }
+    .work div { padding: 16px 20px 20px; }
+    .work h3 { margin: 0 0 4px; font-size: 1.1rem; }
+    .work p { margin: 0; color: var(--muted); font-size: .95rem; }
+    .work .tag { display: inline-block; margin-bottom: 8px; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--brand-dark); }
+    .intro { color: var(--muted); margin: -8px 0 24px; max-width: 640px; }
     .contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
     .contact div { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
     .contact strong { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 4px; }
@@ -111,6 +119,35 @@
             <p>Siti, applicazioni e gestionali per aziende e professionisti: design, sviluppo e assistenza.</p>
             <a href="mailto:info@gofood.it">Parliamo del tuo progetto →</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="wrap">
+        <h2>Alcuni lavori</h2>
+        <p class="intro">Siti web realizzati per ristoranti e strutture ricettive a Palermo: veloci, ottimizzati per il telefono e pensati per portare prenotazioni.</p>
+        <div class="cards">
+          <a class="work" href="https://www.villapensabene.it/" target="_blank" rel="noopener">
+            <img src="portfolio/villapensabene.jpg" alt="Sito web Villa Pensabene" width="800" height="420" loading="lazy">
+            <div><span class="tag">Ristorante</span><h3>Villa Pensabene</h3><p>Ristorante pizzeria a Palermo: menu, Giro Pizza, eventi e prenotazione su WhatsApp.</p></div>
+          </a>
+          <a class="work" href="https://sunsetbarcarello.it/" target="_blank" rel="noopener">
+            <img src="portfolio/sunsetbarcarello.jpg" alt="Sito web Sunset Barcarello" width="800" height="420" loading="lazy">
+            <div><span class="tag">Ristorante</span><h3>Sunset Barcarello</h3><p>Pizzeria, ristorante e apericena sul mare di Barcarello, con galleria e prenotazione.</p></div>
+          </a>
+          <a class="work" href="https://www.osteriacilea.it/" target="_blank" rel="noopener">
+            <img src="portfolio/osteriacilea.jpg" alt="Sito web Osteria Cilea" width="800" height="420" loading="lazy">
+            <div><span class="tag">Ristorante</span><h3>Osteria Cilea</h3><p>Cucina siciliana di tradizione a Palermo: la storia, i piatti e la prenotazione online.</p></div>
+          </a>
+          <a class="work" href="https://www.mondelloholiday.it/" target="_blank" rel="noopener">
+            <img src="portfolio/mondelloholiday.jpg" alt="Sito web Mondello Holiday" width="800" height="420" loading="lazy">
+            <div><span class="tag">Casa vacanze</span><h3>Mondello Holiday</h3><p>Due alloggi a due passi dal mare di Mondello, con prezzi, galleria e prenotazione, in italiano e inglese.</p></div>
+          </a>
+          <a class="work" href="https://scjavuru.holiday/" target="_blank" rel="noopener">
+            <img src="portfolio/scjavuru.jpg" alt="Sito web Scjavuru" width="800" height="420" loading="lazy">
+            <div><span class="tag">Casa vacanze</span><h3>Scjavuru</h3><p>Appartamento con terrazza nel centro storico di Palermo, con prenotazione diretta, in italiano e inglese.</p></div>
+          </a>
         </div>
       </div>
     </section>
