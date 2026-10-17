@@ -53,7 +53,7 @@
     header { padding: 28px 0; }
     .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; }
     .logo span { color: var(--brand); }
-    .hero { padding: 48px 0 56px; }
+    .hero { padding-top: 48px; padding-bottom: 56px; }
     .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; }
     .hero p { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin: 0 0 28px; }
     .btn {
@@ -79,6 +79,37 @@
     .work p { margin: 0; color: var(--muted); font-size: .95rem; }
     .work .tag { display: inline-block; margin-bottom: 8px; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--brand-dark); }
     .intro { color: var(--muted); margin: -8px 0 24px; max-width: 640px; }
+    .featured { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .project { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
+    .project .visual { height: 220px; display: flex; align-items: center; justify-content: center; }
+    .project .visual img { max-height: 180px; width: auto; }
+    .project .body { padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .project h3 { margin: 0; font-size: 1.4rem; }
+    .project p { margin: 0; color: var(--muted); }
+    .project ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .project .actions { margin-top: auto; padding-top: 8px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn-ghost { display: inline-block; border: 1px solid var(--brand); color: var(--brand-dark); text-decoration: none; padding: 11px 20px; border-radius: 999px; font-weight: 600; }
+    .btn-ghost:hover { background: #fdeee4; }
+    .band { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+    .band h2 { margin: 0 0 6px; }
+    .band p { margin: 0; color: var(--muted); max-width: 560px; }
+    .form-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 24px; align-items: start; }
+    @media (max-width: 760px) { .form-grid { grid-template-columns: 1fr; } }
+    form { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { form { grid-template-columns: 1fr; } }
+    form .full { grid-column: 1 / -1; }
+    label { display: block; font-size: .9rem; font-weight: 600; margin-bottom: 4px; }
+    input, select, textarea { width: 100%; font: inherit; color: var(--text); background: #fff; border: 1px solid #e3d3c5; border-radius: 10px; padding: 10px 12px; }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--brand); outline-offset: 1px; border-color: var(--brand); }
+    textarea { min-height: 120px; resize: vertical; }
+    .check { display: flex; gap: 10px; align-items: flex-start; font-size: .9rem; color: var(--muted); font-weight: 400; }
+    .check input { width: auto; margin-top: 4px; }
+    .hp { position: absolute; left: -9999px; }
+    form button { border: 0; cursor: pointer; font: inherit; }
+    .form-status { margin: 0; font-weight: 600; }
+    .form-status.ok { color: #1b7a3a; }
+    .form-status.err { color: #b42318; }
+    .contact-list { display: grid; gap: 12px; }
     .contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
     .contact div { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
     .contact strong { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 4px; }
@@ -97,28 +128,59 @@
     <div class="wrap hero">
       <h1>Software, siti web e soluzioni digitali per le attività locali</h1>
       <p>Progettiamo e sviluppiamo strumenti digitali semplici da usare, con un'attenzione particolare alla ristorazione. Dall'idea al lancio, con assistenza diretta a Palermo.</p>
-      <a class="btn" href="mailto:info@gofood.it">Scrivici</a>
+      <a class="btn" href="#contatti">Richiedi informazioni</a>
     </div>
+
+    <section id="progetti">
+      <div class="wrap">
+        <h2>I nostri progetti</h2>
+        <div class="featured">
+          <article class="project">
+            <div class="visual" style="background:#fff"><img src="progetti/gofoodmenu-logo.png" alt="Logo Go!Food Menù" width="397" height="396"></div>
+            <div class="body">
+              <h3>Go!Food Menù</h3>
+              <p>Il menu digitale con QR code per ristoranti, pizzerie e bar, usato ogni giorno da locali di Palermo e provincia.</p>
+              <ul>
+                <li>Multilingua, con allergeni e foto dei piatti</li>
+                <li>Aggiornabile in tempo reale dal telefono</li>
+                <li>App installabile con il logo del locale</li>
+                <li>Assistente AI per rispondere alle recensioni Google</li>
+              </ul>
+              <div class="actions">
+                <a class="btn" href="https://gofoodmenu.it" target="_blank" rel="noopener">Scopri di più</a>
+                <a class="btn-ghost" href="#contatti" data-interest="Go!Food Menù">Richiedi informazioni</a>
+              </div>
+            </div>
+          </article>
+          <article class="project">
+            <div class="visual" style="background:#f1f1f1"><img src="progetti/bemyrider.jpg" alt="bemyrider: rider ed esercenti" width="480" height="480"></div>
+            <div class="body">
+              <h3>bemyrider</h3>
+              <p>La prima community di rider indipendenti, nata a Palermo: il delivery dove i numeri tornano a essere persone.</p>
+              <ul>
+                <li>Gli esercenti prenotano rider professionisti a ore</li>
+                <li>I rider scelgono tariffe e disponibilità</li>
+                <li>Chat integrata e recensioni verificate</li>
+                <li>Pagamenti sicuri con Stripe, senza algoritmi</li>
+              </ul>
+              <div class="actions">
+                <a class="btn" href="https://bemyrider.it/app/" target="_blank" rel="noopener">Scopri di più</a>
+                <a class="btn-ghost" href="#contatti" data-interest="bemyrider">Richiedi informazioni</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <section>
       <div class="wrap">
-        <h2>I nostri progetti</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>Go!Food Menù</h3>
-            <p>Il menu digitale con QR code per ristoranti, pizzerie e bar: multilingua, con gli allergeni e aggiornabile in tempo reale.</p>
-            <a href="https://gofoodmenu.it">Scopri Go!Food Menù →</a>
+        <div class="band">
+          <div>
+            <h2>Siti web e software su misura</h2>
+            <p>Siti, applicazioni e gestionali per ristoranti, strutture ricettive, aziende e professionisti: design, sviluppo e assistenza, dall'idea al lancio.</p>
           </div>
-          <div class="card">
-            <h3>bemyrider</h3>
-            <p>La prima community di rider indipendenti, nata a Palermo: gli esercenti prenotano i rider a ore, i rider scelgono tariffe e orari, con pagamenti sicuri e senza algoritmi.</p>
-            <a href="https://bemyrider.it/app/">Scopri bemyrider →</a>
-          </div>
-          <div class="card">
-            <h3>Siti web e software su misura</h3>
-            <p>Siti, applicazioni e gestionali per aziende e professionisti: design, sviluppo e assistenza.</p>
-            <a href="mailto:info@gofood.it">Parliamo del tuo progetto →</a>
-          </div>
+          <a class="btn" href="#contatti" data-interest="Sito web">Parliamo del tuo progetto</a>
         </div>
       </div>
     </section>
@@ -156,13 +218,36 @@
       </div>
     </section>
 
-    <section>
+    <section id="contatti">
       <div class="wrap">
-        <h2>Contatti</h2>
-        <div class="contact">
-          <div><strong>Email</strong><a href="mailto:info@gofood.it">info@gofood.it</a></div>
-          <div><strong>Telefono</strong><a href="tel:+393383779151">338 377 9151</a></div>
-          <div><strong>Indirizzo</strong>Via Mariano Stabile 160<br>90139 Palermo (PA)</div>
+        <h2>Richiedi informazioni</h2>
+        <p class="intro">Raccontaci di cosa hai bisogno: ti rispondiamo entro un giorno lavorativo.</p>
+        <div class="form-grid">
+          <form id="contact-form" novalidate>
+            <div><label for="f-name">Nome e cognome *</label><input id="f-name" name="name" required autocomplete="name"></div>
+            <div><label for="f-business">Attività</label><input id="f-business" name="business" autocomplete="organization" placeholder="Es. Pizzeria Da Mario"></div>
+            <div><label for="f-email">Email *</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+            <div><label for="f-phone">Telefono</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="full"><label for="f-interest">Mi interessa</label>
+              <select id="f-interest" name="interest">
+                <option>Go!Food Menù</option>
+                <option>bemyrider</option>
+                <option>Sito web</option>
+                <option>Software o app su misura</option>
+                <option>Altro</option>
+              </select>
+            </div>
+            <div class="full"><label for="f-message">Messaggio *</label><textarea id="f-message" name="message" required></textarea></div>
+            <div class="hp" aria-hidden="true"><label for="f-website">Lascia vuoto</label><input id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
+            <label class="check full"><input type="checkbox" name="privacy" required> <span>Acconsento al trattamento dei miei dati per ricevere una risposta a questa richiesta. Titolare: GO! Food Italia di Giorgio Di Martino. I dati non vengono ceduti a terzi né usati per altri scopi.</span></label>
+            <div class="full"><button class="btn" type="submit">Invia richiesta</button></div>
+            <p class="form-status full" role="status" aria-live="polite"></p>
+          </form>
+          <div class="contact-list contact">
+            <div><strong>Email</strong><a href="mailto:info@gofood.it">info@gofood.it</a></div>
+            <div><strong>Telefono e WhatsApp</strong><a href="tel:+393383779151">338 377 9151</a></div>
+            <div><strong>Indirizzo</strong>Via Mariano Stabile 160<br>90139 Palermo (PA)</div>
+          </div>
         </div>
       </div>
     </section>
@@ -173,5 +258,26 @@
       GO! Food Italia di Giorgio Di Martino · P.IVA 06955440828 · Via Mariano Stabile 160, 90139 Palermo
     </div>
   </footer>
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      var status = form.querySelector('.form-status');
+      var select = document.getElementById('f-interest');
+      document.querySelectorAll('[data-interest]').forEach(function (a) {
+        a.addEventListener('click', function () { select.value = a.getAttribute('data-interest'); });
+      });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { status.className = 'form-status full err'; status.textContent = 'Compila i campi obbligatori e accetta il trattamento dei dati.'; form.reportValidity(); return; }
+        var button = form.querySelector('button');
+        button.disabled = true; status.className = 'form-status full'; status.textContent = 'Invio in corso…';
+        var data = Object.fromEntries(new FormData(form).entries());
+        fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+          .then(function (r) { if (!r.ok) throw new Error(); form.reset(); status.className = 'form-status full ok'; status.textContent = 'Grazie! Abbiamo ricevuto la tua richiesta e ti risponderemo al più presto.'; })
+          .catch(function () { status.className = 'form-status full err'; status.textContent = 'Invio non riuscito. Scrivici a info@gofood.it o chiamaci al 338 377 9151.'; })
+          .finally(function () { button.disabled = false; });
+      });
+    })();
+  </script>
 </body>
 </html>
